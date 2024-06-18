@@ -7,7 +7,6 @@ import Cart        from "@component/Cart";
 const Page: React.FC = () => {
     return (
         <div className="">
-            <Landing/>
             <ProductList />
             <Cart/>
         </div>

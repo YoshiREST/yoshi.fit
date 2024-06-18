@@ -13,19 +13,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     const { addToCart } = useContext(CartContext) as CartContextType;
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    const handlePreviousImage = () => {
-        setCurrentImageIndex((prevIndex) =>
-            prevIndex === 0 ? product.images.length - 1 : prevIndex - 1
-        );
-    };
-
-    const handleNextImage = () => {
-        setCurrentImageIndex((prevIndex) =>
-            prevIndex === product.images.length - 1 ? 0 : prevIndex + 1
-        );
-    };
 
     const handleAddToCart = () => {
         addToCart({ id: product.id, image: product.images[0].src, title: product.title, price: (product.variants[0].price/100), description: product.description });
@@ -36,18 +24,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <CardBody>
                 <div className="relative">
                     <Image
-                        src={product.images[currentImageIndex].src}
+                        src={product.images[0].src}
                         alt={product.title}
                         width="100%"
                         height="auto"
                         className="rounded-lg"
                     />
-                    <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
-                        <Button className={"auto shadow"} onClick={handlePreviousImage}>{"<"}</Button>
-                    </div>
-                    <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
-                        <Button className={"auto shadow"} onClick={handleNextImage}>{">"}</Button>
-                    </div>
                 </div>
                 <Spacer y={1} />
                 <h4 className="text-xl font-semibold text-white">{product.title}</h4>

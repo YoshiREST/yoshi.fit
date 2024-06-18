@@ -1,28 +1,16 @@
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 
-const Header = () => {
+const HeaderNavbar = () => {
     return (
-        <Navbar position="static" className={"bg-gray-800 absolute text-white"}>
-            <NavbarContent className="" >
+        <Navbar position="static" className="bg-gray-800 text-white">
+            <NavbarContent className="container mx-auto">
 
                 <NavbarBrand>
-                    <Link href="/" className={"text-lg font-bold"}>YoshiOUTWEAR</Link>
+                    <Link href="/" className="text-lg font-bold">YoshiOUTWEAR</Link>
                 </NavbarBrand>
 
                 <NavbarItem>
-                    <Link href="/accessories">Accessories</Link>
-                </NavbarItem>
-
-                <NavbarItem>
-                    <Link href="/supplments">Supplments</Link>
-                </NavbarItem>
-
-                <NavbarItem>
-                    <Link href="/mens">Mens</Link>
-                </NavbarItem>
-
-                <NavbarItem>
-                    <Link href="/womens">Womens</Link>
+                    <Link href="/cart">Cart</Link>
                 </NavbarItem>
 
             </NavbarContent>
@@ -30,6 +18,7 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default HeaderNavbar;
 
-// path: src/app/container/header/Header.tsx
+// path: src/app/container/header/Navbar.tsx
+

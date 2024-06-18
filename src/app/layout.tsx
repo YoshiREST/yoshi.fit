@@ -30,15 +30,13 @@ export default function RootLayout({
         <body>
         <NextUIProvider>
             <CartProvider>
-                <div>
+
                     <Header/>
-                </div>
-                <div>
+
                     {children}
-                </div>
-                <div>
+
                     <Footer/>
-                </div>
+
             </CartProvider>
         </NextUIProvider>
         </body>
