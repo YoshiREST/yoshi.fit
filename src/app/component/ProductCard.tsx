@@ -4,6 +4,8 @@ import { CartContext, CartContextType } from '@context/CartContext';
 
 import { TProductData } from "printify.ts/lib";
 
+import parse from 'html-react-parser';
+
 // Define the props for ProductCard component
 interface ProductCardProps {
     product: TProductData;
@@ -49,7 +51,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 </div>
                 <Spacer y={1} />
                 <h4 className="text-xl font-semibold text-white">{product.title}</h4>
-                <p className="text-gray-300">{product.description}</p>
+                <p className="text-gray-300">{parse(product.description)}</p>
                 <Spacer y={0.5} />
                 <p className="text-lg font-bold text-white">${(product.variants[0].price)/100}</p>
                 <Spacer y={0.5} />

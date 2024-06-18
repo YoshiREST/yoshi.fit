@@ -11,6 +11,7 @@
   "dependencies": {
     "@nextui-org/react": "^2.3.6",
     "framer-motion": "^11.2.6",
+    "html-react-parser": "^5.1.10",
     "next": "14.0.4",
     "printify.ts": "^1.0.32",
     "react": "^18",
