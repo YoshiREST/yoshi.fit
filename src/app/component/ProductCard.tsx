@@ -2,18 +2,11 @@ import React, { useContext, useState } from 'react';
 import { Card, Image, CardBody, Spacer, Button } from "@nextui-org/react";
 import { CartContext, CartContextType } from '@context/CartContext';
 
-// Define the Product interface
-export interface Product {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-    images: string[];
-}
+import { TProductData } from "printify.ts/lib";
 
 // Define the props for ProductCard component
 interface ProductCardProps {
-    product: Product;
+    product: TProductData;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
@@ -33,7 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     };
 
     const handleAddToCart = () => {
-        addToCart({ id: product.id, images: product.images, name: product.name, price: product.price, description: product.description });
+        addToCart({ id: product.id, image: product.images[0].src, title: product.title, price: (product.variants[0].price/100), description: product.description });
     };
 
     return (
@@ -41,8 +34,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <CardBody>
                 <div className="relative">
                     <Image
-                        src={product.images[currentImageIndex]}
-                        alt={product.name}
+                        src={product.images[currentImageIndex].src}
+                        alt={product.title}
                         width="100%"
                         height="auto"
                         className="rounded-lg"
@@ -55,10 +48,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                     </div>
                 </div>
                 <Spacer y={1} />
-                <h4 className="text-xl font-semibold text-white">{product.name}</h4>
+                <h4 className="text-xl font-semibold text-white">{product.title}</h4>
                 <p className="text-gray-300">{product.description}</p>
                 <Spacer y={0.5} />
-                <p className="text-lg font-bold text-white">${product.price}</p>
+                <p className="text-lg font-bold text-white">${(product.variants[0].price)/100}</p>
                 <Spacer y={0.5} />
                 <Button className={"auto shadow"} color="primary" onClick={handleAddToCart}>
                     Add to Cart

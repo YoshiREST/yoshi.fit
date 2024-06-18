@@ -2,12 +2,13 @@
 
 import React, { createContext, useState, ReactNode } from 'react';
 
-import { Product } from "@component/ProductCard";
+import {TProductData} from "printify.ts/lib";
+
 
 // Define the type for the context value
 export interface CartContextType {
-    cart: Product[];
-    addToCart: (product: Product) => void;
+    cart: TProductData[];
+    addToCart: (product: TProductData) => void;
 }
 
 // Create the context with a default value
@@ -19,9 +20,9 @@ interface CartProviderProps {
 }
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-    const [cart, setCart] = useState<Product[]>([]);
+    const [cart, setCart] = useState<TProductData[]>([]);
 
-    const addToCart = (product: Product) => {
+    const addToCart = (product: TProductData) => {
         setCart([...cart, product]);
     };
 

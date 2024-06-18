@@ -10,8 +10,8 @@ const Cart: React.FC = () => {
             <ul>
             {cart.map((item, index) => (
                     <li key={index} className="border-b py-2">
-                <img src={item.images[0]} alt={item.name} className="w-16 h-16 object-cover inline-block mr-4" />
-                <span>{item.name}</span>
+                <img src={item.image} alt={item.name} className="w-16 h-16 object-cover inline-block mr-4" />
+                <span>{item.title}</span>
                 <span className="ml-4">${item.price}</span>
                 </li>
     ))}

@@ -12,6 +12,7 @@
     "@nextui-org/react": "^2.3.6",
     "framer-motion": "^11.2.6",
     "next": "14.0.4",
+    "printify.ts": "^1.0.32",
     "react": "^18",
     "react-dom": "^18",
     "react-slick": "^0.30.2",
