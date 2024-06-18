@@ -21,3 +21,31 @@
 body, main, html {
   background-color: #121212;
 }
+
+.slick-slider {
+  padding: 0 10px;
+}
+
+.slick-slide {
+  padding: 10px;
+}
+
+.arrow-button {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: background 0.3s ease;
+}
+
+.arrow-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.arrow-button i {
+  color: white;
+  font-size: 18px;
+}
