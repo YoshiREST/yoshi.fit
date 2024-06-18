@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { TProducts } from "printify.ts/lib";
 import { NextResponse } from "next/server";
 
-const printify = new Printify({ key: process.env.NEXT_PUBLIC_PRINTIFY_API_KEY! });
+const printify = new Printify({ key: process.env.PRINTIFY_API_KEY! });
 
 export async function GET(req: NextApiRequest, res: NextApiResponse<TProducts>) {
     try {
