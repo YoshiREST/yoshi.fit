@@ -1,12 +1,15 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
-import ProductCard from "@component/ProductCard";
-import { TProductData } from "printify.ts/lib";
-import Slider from "react-slick";
+import { TProductData }               from "printify.ts/lib";
+import { Button }                     from "@nextui-org/react";
+import Slider                         from "react-slick";
+
+import ProductModal                   from "@component/ProductModal";
+import ProductCard                    from "@component/ProductCard";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Button } from "@nextui-org/react";
 
 type ProductWithTags = TProductData & {
     tags: string[];

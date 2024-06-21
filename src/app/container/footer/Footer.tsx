@@ -24,9 +24,6 @@ const Footer = () => {
                         <Link className="text-white" href="/contact">
                             Contact
                         </Link>
-                        <Link className="text-white" href="/about">
-                            About
-                        </Link>
                     </div>
                 </div>
             </div>
