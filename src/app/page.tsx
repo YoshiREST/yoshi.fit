@@ -1,15 +1,18 @@
-'use client';
+import React from 'react';
+import Header from '@components/Header';
+import Footer from '@components/Footer';
+import Landing from '@components/Landing';
 
-import ProductList from "@container/product/ProductList";
-import Cart from "@component/Cart";
-
-const Page: React.FC = () => {
+const HomePage: React.FC = () => {
     return (
         <div>
-            <ProductList />
-            <Cart />
+            <Header />
+            <main>
+                <Landing />
+            </main>
+            <Footer />
         </div>
     );
-}
+};
 
-export default Page;
+export default HomePage;
